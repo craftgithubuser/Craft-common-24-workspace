@@ -1,0 +1,4 @@
+SELECT EmployeeID, LastName, FirstName, HireDate
+FROM Employees
+WHERE DepartmentID = 10
+ORDER BY HireDate DESC;
