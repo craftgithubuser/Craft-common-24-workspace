@@ -1,2 +1,6 @@
 github i have made this change
+<<<<<<< HEAD
 needs more 
+easy to rememberdo it?
+>>>>>>> main
+And did update
