@@ -1,0 +1,12 @@
+create database databasename;
+create database MyDB;
+
+create table customers(
+    Cust_ID int,
+    Cust_FirstName varchar(20),
+    Cust_LastName varchar(20),
+    Cust_NickName varchar(20),
+    Cust_Age int,
+    Cust_Gender character,
+    Cust_country varchar(20),
+    Cust_Salary decimal(10,2)

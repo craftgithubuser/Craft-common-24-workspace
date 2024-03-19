@@ -1,0 +1,14 @@
+install git bash 
+signup git hub
+open empty file in any convenience
+open bash there 
+check the status just to make sure 
+verify our username and email by putting git config first  
+then copy the code of the remote repository we want to clone
+git clone and paste the one copied  
+modify change on your local repository
+stage using git add .
+commit git commit -m "blablabla"
+pull
+push 
+branching is next 

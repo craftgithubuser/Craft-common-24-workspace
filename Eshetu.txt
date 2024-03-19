@@ -1,1 +1,4 @@
 I have to change
+Listing branch
+switching bn branches
+deleting branches
