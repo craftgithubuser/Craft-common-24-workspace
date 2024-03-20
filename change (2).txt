@@ -1,1 +1,41 @@
-i make change ....
+Introduction to database quiz
+----------------------------
+1,what is data?
+   -data are individual facts
+2,what is informaion?
+   -a processed data which give meaningfull
+3,what is data base?
+   - database is a systematic collection related of data.
+
+4,What is the Relation Database Management System(RDBMS)?
+   -rdms is a software tools to manage a data
+
+5,Define the importance of Relation Database Management System(RDBMS)?
+       
+     -rdbms is a taype of database that stores and organize data into a tables,which are made up of rows and colums.
+
+6, As we all know that there are Two types of Database. Relational Database(SQL) AND Non-Relational DB(NO sql). what is the difference between them
+
+   - A relational database stores data in tables composed of rows and columns. in a relational database, data is contained within a table, which is then linked to data contained within other tables through the use of unique identifying keys.
+
+ -A non-relational database is a type of database that doesn’t store data in tables but instead in whatever format is best for the type of data being stored.
+
+7,List examples of Relation Database Management System(RDBMS)?
+   -MySQL ,IBM Db2 ,Snowflake ,Amazon Aurora
+
+8,List examples of Non-Relational DB(Nosql)?
+
+  -MongoD , IBM Cloundan ,Amazon DynamoDB
+
+9,Define and Describe is Structured Query Language(SQL)?
+   - sql is a programming language to interract with data base . SQL-structural query language 
+
+10,     List and Describe each of the different subsets of SQL(Mean DDL, DML, DCL, TCL)?
+          
+           -Data Manipulation Language (DML) for editing data or used to manipulate datain the table -not auto commited
+
+           - Data Definition Language (DDL) for structuring data - auto -commited/save changes permanetly  
+
+            - Data Control Language (DCL) for administering the database.
+            -transcational control language (tcl)-transaction manage 
+11,
