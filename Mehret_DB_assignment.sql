@@ -3,12 +3,12 @@
 Create a database or  Schema called MyDB
 create a table name Customer
 */
-drop database  if exists  Group_c;
-create database   Group_c;
+drop database  if exists MyDb;
+create database   MyDb;
 
-use Group_C;
+use MyDb;
 create table customer(
-cust_ID int AUTO_INCREMENT key not null,
+cust_ID int auto_increment key not null,
 Cust_FirstName varchar(50), 
 cust_lastName varchar(50),
 cust_age int not null,
@@ -20,7 +20,7 @@ cust_Salary dec not null
 Insert the following Data in to Customers table
 */
 
-insert into customer values ( 11,"Nick","Jones",25,"m","USA",200000000),
+insert into customer values (111,"Nick","Jones",25,"m","USA",200000000),
 (222,"Antony","Martial",25,"m","France",100000000),
 (333,"Ross","Geller",28,"m","Uzbekistan",360000000),
 (444,"Chandller","Bing",24,"m","Unknown",340000000),
@@ -30,8 +30,7 @@ insert into customer values ( 11,"Nick","Jones",25,"m","USA",200000000),
 (888,"joey","Tribbiani",27,"m","France",7000000000);
 
 -- 2-update
-
-update customer 
+ update customer 
 set cust_Country = 'Ethiopia'
 where cust_ID in (333, 444,  555);
 
