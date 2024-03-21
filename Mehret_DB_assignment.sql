@@ -147,6 +147,48 @@ select  *
 from customer 
 where cust_country like (Ethiopia,USA, France);
 
+-- create another table
+use  MyBB;
+create table addres(
+student_zip varchar(50) primary key not null,
+student_street varchar(100) not null,
+student_city varchar(50) not null,
+student_state varchar(100),
+student_id int 
+);
+
+-- DML ADDRES
+insert into addres values(1000, "megenagna", "addisabeba", "addisabeba", 444),
+(2000, "4_killo", "addisabeba", "addisabeba", 555),
+(3000, "41_eyesus", "addisabeba", "addisabeba", 888),
+(4000, "6_killo", "addisabeba", "addisabeba", 333),
+(5000, "01_st", "san diago", "california"),
+(6000, "ku_road", "los angeles", "california"),
+(7000, "JK_road", "miami", "florida"),
+(8000, "LJ_road", "atlanta", "georgia");
+
+/* Write a query that perform INNER JOIN, LEFT OUTER JOIN, Right outer join and FULL OUTER JOIN.*/
+
+-- inner join
+SELECT * 
+FROM customer INNER JOIN Address 
+on customer.cust_ID = Address.cust_ID;
+
+-- left outer join
+SELECT * 
+FROM customer left outer JOIN Address 
+on customer.cust_ID = Address.cust_ID;
+
+-- right outer join
+SELECT * 
+FROM customer right outer join Address 
+on customer.cust_ID = Address.cust_ID;
+
+-- Full outer join
+SELECT * 
+FROM customer full JOIN Address 
+on customer.cust_ID = Address.cust_ID;
+
 
 
 
