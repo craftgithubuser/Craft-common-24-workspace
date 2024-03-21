@@ -36,8 +36,8 @@ set cust_Country = 'Ethiopia'
 where cust_ID in (333, 444,  555);
 
 -- 3-Delete
-Delete From customer 
-where cust_firstName = 'Nick';
+/*Delete From customer 
+where cust_firstName = 'Nick';*/
 
 -- ADD, modify,Delete, Rename, Drop (Db, table)
 
@@ -79,7 +79,7 @@ where cust_Gender ='m';
 
 -- 5
 
-SELECT DISTINCT  Country 
+SELECT DISTINCT  cust_Country 
 FROM customer;
 
 -- Q6
@@ -99,11 +99,11 @@ where cust_country ='Ethiopia' or cust_country ='Uzbekistan';
 
 -- Q 9
 select min(cust_salary) 
-From custoner;
+From customer;
 
 -- Q10
 select max(cust_salary) 
-From custoner;
+From customer;
 
 -- Q11
 
@@ -145,49 +145,49 @@ where Cust_LastName like 'P%a';
 -- Q18
 select  *
 from customer 
-where cust_country like (Ethiopia,USA, France);
+where cust_country in ('Ethiopia','USA', 'France');
 
 -- create another table
-use  MyBB;
-create table addres(
-student_zip varchar(50) primary key not null,
-student_street varchar(100) not null,
-student_city varchar(50) not null,
-student_state varchar(100),
-student_id int 
+
+create table address(
+cust_zip varchar(50) primary key not null,
+cust_street varchar(100) not null,
+cust_city varchar(50) not null,
+cust_state varchar(100),
+cust_id int 
 );
 
 -- DML ADDRES
-insert into addres values(1000, "megenagna", "addisabeba", "addisabeba", 444),
+insert into address values(1000, "megenagna", "addisabeba", "addisabeba", 444),
 (2000, "4_killo", "addisabeba", "addisabeba", 555),
 (3000, "41_eyesus", "addisabeba", "addisabeba", 888),
 (4000, "6_killo", "addisabeba", "addisabeba", 333),
-(5000, "01_st", "san diago", "california"),
-(6000, "ku_road", "los angeles", "california"),
-(7000, "JK_road", "miami", "florida"),
-(8000, "LJ_road", "atlanta", "georgia");
+(5000, "01_st", "san diago", "california",null),
+(6000, "ku_road", "los angeles", "california",null),
+(7000, "JK_road", "miami", "florida",null),
+(8000, "LJ_road", "atlanta", "georgia",null);
 
 /* Write a query that perform INNER JOIN, LEFT OUTER JOIN, Right outer join and FULL OUTER JOIN.*/
 
 -- inner join
 SELECT * 
 FROM customer INNER JOIN Address 
-on customer.cust_ID = Address.cust_ID;
+on customer.cust_Id = Address.cust_id;
 
 -- left outer join
 SELECT * 
 FROM customer left outer JOIN Address 
-on customer.cust_ID = Address.cust_ID;
+on customer.cust_Id = Address.cust_Id;
 
 -- right outer join
 SELECT * 
 FROM customer right outer join Address 
-on customer.cust_ID = Address.cust_ID;
+on customer.cust_Id = Address.cust_Id;
 
 -- Full outer join
-SELECT * 
-FROM customer full JOIN Address 
-on customer.cust_ID = Address.cust_ID;
+/*SELECT * 
+FROM customer full join Address 
+on customer.cust_Id = Address.cust_Id;*/
 
 
 
