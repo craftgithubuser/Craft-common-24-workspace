@@ -1,0 +1,6 @@
+Creating Branch 
+-git checkout -b 'branch name'
+-git status
+-git add .
+-git commit -m "massage"
+-git push origin BranchName
