@@ -1,0 +1,426 @@
+
+create database studDB;
+Use studDB;
+create table stud
+( stud_ID int primary key not null auto_increment,
+stud_FirstName varchar (50) not null,
+stud_LastName varchar (50) not null,
+stud_NickName varchar (50),
+stud_Age int,
+stud_Gender varchar (20) not null,
+stud_Country varchar (50) not null,
+stud_Salary int not null);
+alter table stud
+add column bonus int;  
+alter table stud
+modify stud_Age int not null;
+alter table stud
+drop column stud_NickName; 
+alter table stud
+drop column stud_bonus;
+rename table stud to studs;
+drop table stud;
+drop database studDB;
+create database studDB;
+use studDB;
+-- 1. Insert the following data into customers table
+insert into stud (stud_ID, Cust_FirstName, 
+							stud_LastName, stud_Age,
+                            stud_Gender, stud_Country, stud_Salary)
+values (111, 'Nick', 'Jones', 55, 'M', 'USA', 20000000),
+	   (222, 'Antony', 'Martial', 35, 'M', 'France', 10000000),
+       (333, 'Ross', 'Geller', 40, 'M', 'Uzbekistan', 36000000),
+       (444, 'Chandler', 'Bing', 45, 'M', 'Unkown', 34000000),
+       (555, 'Rachel', 'Green', 29, 'F', 'Kazakhstan', 400000),
+       (666, 'Nick', 'Jones', 49, 'M', 'USA', 20000000),
+       (777, 'Poul', 'Pogba', 32, 'M', 'France', 20000000),
+       (888, 'Joey', 'Tribbiani', 50, 'M', 'Ethiopia', 70000000);
+       
+-- 2. Update Cust_ID = 333, 444, 555 country to Ethiopia.
+Update stud
+set stud_Country = 'Ethiopia' 
+where stud_ID ( 333, 444, 555);
+delete from stud
+where stud_ID = 666;
+select *
+from stud
+where stud_Country = 'Ethiopia';
+select * from stud
+where stud_Salary > 5000000;
+select stud_FirstName, stud_LastName, stud_Country
+from stud
+where stud_Gender = 'M'; 
+
+-- 5. Write a query which display only distinct country?
+select distinct stud_country
+from stud;
+select stud_FirstName, stud_LastName, stud_Country
+from stud
+where stud_Gender = 'M'
+order by stud_Country desc; 
+select * from stud
+where stud_Gender = 'M' 
+and stud_Salary > 2000000 
+and stud_Country = 'Ethiopia'; 
+select * from stud
+where stud_Country = 'France' 
+or stud_Country = 'Ethiopia'; 
+select min(stud_Salary) as Minimum_Salary
+from stud;
+select max(stud_Salary) as Maximum_Salary
+from stud;
+select count(stud_ID) as Number_stud
+from stud; 
+select avg(stud_Salary) as Average_Salary
+from stud;
+select sum(stud_Salary) as The_Sum
+from stud;
+select * from stud
+where stud_Salary between 20000000 and 80000000;
+
+
+select * from stud
+where stud_FirstName like 'S%';   
+
+
+select * from stud
+where stud_FirstName like '_a%' and stud_LastName like '%n';
+-- OR
+select * from stud
+where substring(stud_FirstName, 2, 1) = 'a'
+and stud_LastName like '%n';
+
+select * from stud
+where stud_LastName like 'p%a';
+
+select * from stud
+where stud_Country in ('Ethiopia', 'USA', 'France');
+
+-- begining of the sql join quiz --
+/* 1. Create a table name Address inside studDB database
+2. Inside Address table add column 
+column Name               Datatype  
+- stud_ZIP               - Stirng         didn't accept null value 
+- stud_Street            - String	      didn't accept null value
+- stud_City               - String         didn't accept null value
+- stud_State              - String
+- stud_ID                  - integer
+- uniquely identifies each record in a table by stud_ZIP
+- The Customers table and Address table are connected by stud_ID
+3. Insert the following Data in to Address table */
+
+Create table Address (stud_ZIP varchar (50) primary key not null, 
+						   stud_Street varchar (50) not null,
+						   stud_City varchar (50) not null,
+						   stud_State varchar (50),
+                           stud_ID int,
+						   constraint Foreign key address (stud_ID) 
+                           references stud (stud_ID));
+alter table address
+modify stud_State varchar (50);
+-- 3. Insert the following Data in to Address table 
+insert into Address (stud_ZIP, stud_Street, stud_City, stud_State, stud_ID)
+				   values ('1000', 'megenagna', 'Addis Ababa', 'Addis Ababa', 444),
+						  ('2000', '4-kilo', 'Addis Ababa', 'Addis Ababa', 555),
+                          ('3000', '41-eyesus', 'Addis Ababa', 'Addis Ababa', 888),
+                          ('4000', '6-kilo', 'Addis Ababa', 'Addis Ababa', 333),
+						  ('5000', '01-st', 'San Diego', 'California', null),
+                          ('6000', 'KU-road', 'Los Angeles', 'California', null),
+                          ('7000', 'JK-road', 'Miami', 'Florida', null),
+                          ('8000', 'Lj-road', 'Atlanta', 'Georgia', null);
+                          
+/* Write a query that performs 
+INNER JOIN, 
+	LEFT OUTER JOIN, 
+		RIGHT OUTER JOIN,
+			and FULL OUTER JOIN. */
+            
+-- INNER JOIN,
+select * from stud 
+inner join address on customers.Cust_ID = address.stud_ID; 
+select stud.stud_ID, stud.stud_FirstName, stud.stud_Country, 
+address.stud_ZIP, address.stud_City
+from stud 
+inner join address on stud.stud_ID = address.stud_ID;
+
+-- LEFT OUTER JOIN,
+select * from stud
+left outer join address on stud.stud_ID = address.stud_ID; 
+select * from address
+left outer join stud on customers.stud_ID = address.stud_ID;
+
+-- RIGHT OUTER JOIN,
+select * from stud
+right outer join address on stud.stud_ID = address.stud_ID;
+select * from address
+right outer join stud on stud.stud_ID = address.stud_ID;
+
+/* FULL OUTER JOIN, since there is no full outer join in MySQL
+to achieve full outer join, we use righ outer join and 
+left outer join with UNION */
+select * from stud
+left outer join address on stud.stud_ID = address.stud_ID
+union
+select * from stud
+right outer join address on stud.stud_ID = address.stud_ID;        
+select * from address
+left outer join stud on stud.stud_ID = address.stud_ID
+union
+select * from address
+right outer join stud on stud.stud_ID = address.stud_ID; 
+
+create view FullOuterJoin_studAdd as
+select * from stud
+left outer join address on stud.stud_ID = address.stud_ID
+union
+select * from stud
+right outer join address on stud.stud_ID = address.stud_ID; 
+       
+select * from address
+left outer join stud on stud.stud_ID = address.stud_ID
+union
+select * from address
+right outer join stud on stud.stud_ID = address.stud_ID; 
+
+
+      
+     
+            
+
+create database studDB;
+Use studDB;
+create table stud
+( stud_ID int primary key not null auto_increment,
+stud_FirstName varchar (50) not null,
+stud_LastName varchar (50) not null,
+stud_NickName varchar (50),
+stud_Age int,
+stud_Gender varchar (20) not null,
+stud_Country varchar (50) not null,
+stud_Salary int not null);
+alter table stud
+add column bonus int;  
+alter table stud
+modify stud_Age int not null;
+alter table stud
+drop column stud_NickName; 
+alter table stud
+drop column stud_bonus;
+rename table stud to studs;
+drop table stud;
+drop database studDB;
+create database studDB;
+use studDB;
+-- 1. Insert the following data into customers table
+insert into stud (stud_ID, Cust_FirstName, 
+							stud_LastName, stud_Age,
+                            stud_Gender, stud_Country, stud_Salary)
+values (111, 'Nick', 'Jones', 55, 'M', 'USA', 20000000),
+	   (222, 'Antony', 'Martial', 35, 'M', 'France', 10000000),
+       (333, 'Ross', 'Geller', 40, 'M', 'Uzbekistan', 36000000),
+       (444, 'Chandler', 'Bing', 45, 'M', 'Unkown', 34000000),
+       (555, 'Rachel', 'Green', 29, 'F', 'Kazakhstan', 400000),
+       (666, 'Nick', 'Jones', 49, 'M', 'USA', 20000000),
+       (777, 'Poul', 'Pogba', 32, 'M', 'France', 20000000),
+       (888, 'Joey', 'Tribbiani', 50, 'M', 'Ethiopia', 70000000);
+       
+-- 2. Update Cust_ID = 333, 444, 555 country to Ethiopia.
+Update stud
+set stud_Country = 'Ethiopia' 
+where stud_ID ( 333, 444, 555);
+delete from stud
+where stud_ID = 666;
+select *
+from stud
+where stud_Country = 'Ethiopia';
+select * from stud
+where stud_Salary > 5000000;
+select stud_FirstName, stud_LastName, stud_Country
+from stud
+where stud_Gender = 'M'; 
+
+-- 5. Write a query which display only distinct country?
+select distinct stud_country
+from stud;
+select stud_FirstName, stud_LastName, stud_Country
+from stud
+where stud_Gender = 'M'
+order by stud_Country desc; 
+select * from stud
+where stud_Gender = 'M' 
+and stud_Salary > 2000000 
+and stud_Country = 'Ethiopia'; 
+select * from stud
+where stud_Country = 'France' 
+or stud_Country = 'Ethiopia'; 
+select min(stud_Salary) as Minimum_Salary
+from stud;
+select max(stud_Salary) as Maximum_Salary
+from stud;
+select count(stud_ID) as Number_stud
+from stud; 
+select avg(stud_Salary) as Average_Salary
+from stud;
+select sum(stud_Salary) as The_Sum
+from stud;
+select * from stud
+where stud_Salary between 20000000 and 80000000;
+
+
+select * from stud
+where stud_FirstName like 'S%';   
+
+
+select * from stud
+where stud_FirstName like '_a%' and stud_LastName like '%n';
+-- OR
+select * from stud
+where substring(stud_FirstName, 2, 1) = 'a'
+and stud_LastName like '%n';
+
+select * from stud
+where stud_LastName like 'p%a';
+
+select * from stud
+where stud_Country in ('Ethiopia', 'USA', 'France');
+
+-- begining of the sql join quiz --
+/* 1. Create a table name Address inside studDB database
+2. Inside Address table add column 
+column Name               Datatype  
+- stud_ZIP               - Stirng         didn't accept null value 
+- stud_Street            - String	      didn't accept null value
+- stud_City               - String         didn't accept null value
+- stud_State              - String
+- stud_ID                  - integer
+- uniquely identifies each record in a table by stud_ZIP
+- The Customers table and Address table are connected by stud_ID
+3. Insert the following Data in to Address table */
+
+Create table Address (stud_ZIP varchar (50) primary key not null, 
+						   stud_Street varchar (50) not null,
+						   stud_City varchar (50) not null,
+						   stud_State varchar (50),
+                           stud_ID int,
+						   constraint Foreign key address (stud_ID) 
+                           references stud (stud_ID));
+alter table address
+modify stud_State varchar (50);
+-- 3. Insert the following Data in to Address table 
+insert into Address (stud_ZIP, stud_Street, stud_City, stud_State, stud_ID)
+				   values ('1000', 'megenagna', 'Addis Ababa', 'Addis Ababa', 444),
+						  ('2000', '4-kilo', 'Addis Ababa', 'Addis Ababa', 555),
+                          ('3000', '41-eyesus', 'Addis Ababa', 'Addis Ababa', 888),
+                          ('4000', '6-kilo', 'Addis Ababa', 'Addis Ababa', 333),
+						  ('5000', '01-st', 'San Diego', 'California', null),
+                          ('6000', 'KU-road', 'Los Angeles', 'California', null),
+                          ('7000', 'JK-road', 'Miami', 'Florida', null),
+                          ('8000', 'Lj-road', 'Atlanta', 'Georgia', null);
+                          
+/* Write a query that performs 
+INNER JOIN, 
+	LEFT OUTER JOIN, 
+		RIGHT OUTER JOIN,
+			and FULL OUTER JOIN. */
+            
+-- INNER JOIN,
+select * from stud 
+inner join address on customers.Cust_ID = address.stud_ID; 
+select stud.stud_ID, stud.stud_FirstName, stud.stud_Country, 
+address.stud_ZIP, address.stud_City
+from stud 
+inner join address on stud.stud_ID = address.stud_ID;
+
+-- LEFT OUTER JOIN,
+select * from stud
+left outer join address on stud.stud_ID = address.stud_ID; 
+select * from address
+left outer join stud on customers.stud_ID = address.stud_ID;
+
+-- RIGHT OUTER JOIN,
+select * from stud
+right outer join address on stud.stud_ID = address.stud_ID;
+select * from address
+right outer join stud on stud.stud_ID = address.stud_ID;
+
+/* FULL OUTER JOIN, since there is no full outer join in MySQL
+to achieve full outer join, we use righ outer join and 
+left outer join with UNION */
+select * from stud
+left outer join address on stud.stud_ID = address.stud_ID
+union
+select * from stud
+right outer join address on stud.stud_ID = address.stud_ID;        
+select * from address
+left outer join stud on stud.stud_ID = address.stud_ID
+union
+select * from address
+right outer join stud on stud.stud_ID = address.stud_ID; 
+
+create view FullOuterJoin_studAdd as
+select * from stud
+left outer join address on stud.stud_ID = address.stud_ID
+union
+select * from stud
+right outer join address on stud.stud_ID = address.stud_ID; 
+       
+select * from address
+left outer join stud on stud.stud_ID = address.stud_ID
+union
+select * from address
+right outer join stud on stud.stud_ID = address.stud_ID; 
+
+
+      
+     
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
