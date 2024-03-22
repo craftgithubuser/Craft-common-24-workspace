@@ -170,17 +170,20 @@ insert into address values(1000, "megenagna", "addisabeba", "addisabeba", 444),
 /* Write a query that perform INNER JOIN, LEFT OUTER JOIN, Right outer join and FULL OUTER JOIN.*
 -- inner join
 SELECT * 
-FROM customer INNER JOIN Address 
+FROM customer
+ INNER JOIN Address 
 on customer.cust_Id = Address.cust_id;
 
 -- left outer join
 SELECT * 
-FROM customer left outer JOIN Address 
+FROM customer
+ left outer JOIN Address 
 on customer.cust_Id = Address.cust_Id;
 
 -- right outer join
 SELECT * 
-FROM customer right outer join Address 
+FROM customer
+ right outer join Address 
 on customer.cust_Id = Address.cust_Id;
 
 -- Full outer join
