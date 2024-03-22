@@ -1,0 +1,4 @@
+insert into offices(office_id,address,city,state)
+ values(10000,'piasa','bole','it'),
+ (12000,'saris','asaita','tr'),
+ (13000,'stadium','bale','st');
