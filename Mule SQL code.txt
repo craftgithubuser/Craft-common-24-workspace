@@ -1,0 +1,71 @@
+-- table_name
+-- VALUES (value1, value2, value3, ...);
+
+
+insert into infostudents
+values(3,"mike","tyson","lA","12345","mike23@gmail.com","atalanta","usa");
+-- OR
+-- syntax;
+-- INSERT INTO table_name (column1, column2, column3, ...)
+-- VALUES (value1, value2, value3, ...);
+insert into infostudents(id,last_name,first_name,address,postal_code,email,city,country)
+value(4,"phil","johns","carlington","123567","johns12@gmail.com","manchester","england");
+create table teachers(
+           id int primary key auto_increment, 
+           first_name varchar(50) not null, 
+           last_name varchar(50), 
+           school varchar(50) not null, 
+           hire_date date, 
+           salary numeric
+           );
+INSERT INTO teachers 
+values(1, 'tesema', 'Nega', 'Yekatit 12', '2021-01-01', 8000);
+select*
+from infostudents;
+insert into teachers
+values(1,'muha','ahimed','arat kilo','2001-09-07',6000),
+       (2,'gidey','berehe','arada','2004-09-07',7000),
+       (3,'bereket','hailu','kirkos','2008-08-07',2000),
+       (4,'sara','kifle','kolfe','2007-09-07',9000),
+       (5,'gemechisa','abdisa','bole','2000-09-07',5000);
+       
+       iNSERT INTO teachers (id, first_name, last_name, school) 
+values(null, 'Kenenisa', 'Tulu', 'Saris');
+
+insert into teachers(first_name,last_name,school)
+values('roba','dadi','sidist kilo');
+
+select id,first_name,last_name,salary
+From teachers;
+select *
+from teachers
+where id=2;
+select *
+from teachers
+where id=4;
+select id,first_name,last_name,school,hire_date,salary
+from teachers
+where id=3;
+select *
+from teachers
+where first_name='roba';
+-- delete data
+delete
+from teachers
+where id=1;
+
+select*
+from teachers; 
+-- update
+update teachers
+set salary=9000
+where id=3;
+select*
+from teachers;
+update teachers
+set salary=800
+where id=3; 
+update teachers
+set salary=5980
+where id=2;
+
