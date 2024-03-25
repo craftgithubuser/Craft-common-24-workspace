@@ -1,0 +1,15 @@
+ How to create branch Repository
+    - git create branch branchName
+    * How to switch the the working repositry(from one branch toanotehr)
+     - git checkout branchName
+     - git checkout  -b branchname - create new branch and change to that branch 
+   * To delete a branch in a Git repository, you can use the following command:
+
+     git branch -d branch_name
+     Replace branch_name with the name of the branch you want to delete.
+
+     If the branch has not been merged into other branches, you might need to use the -D option instead of -d:
+
+    git branch -D branch_name
+    The -d option stands for delete, and it's a safer option because it prevents you from accidentally deleting branches that haven't been merged yet.
+    The -D option, on the other hand, forces the deletion regardless of whether the branch has been merged or not. Use it with caution.

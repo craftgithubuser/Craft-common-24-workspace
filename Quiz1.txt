@@ -1,0 +1,116 @@
+UseCase
+
+1.       Create a database or  Schema called MyDB
+
+2.       Create a table  name customers
+
+  -- inside customers table add acolumn 
+
+       column Name         Datatype  
+  
+       - Cust_ID                  - integer        make it auto increment and didn't accept null value 
+
+       - Cust_FirstName    - String	     didn't accept null value
+
+       - Cust_LastName     - String         didn't accept null value
+
+       - Cust_NickName    - String
+       
+       - Cust_Age                    - integer
+
+       - Cust_Gender             - Character      didn't accept null value
+
+       - Cust_Country            - String             didn't accept null value
+
+       - Cust_Salary               - Decimal           didn't accept null value
+
+       - uniquely identifies each record in a table by Cust_ID
+-- Update
+
+    Cust_ID=333,444,555 
+    Country to Ethiopian
+
+-- Delete 
+
+    cust_Name=nick jones 
+    WhichCust_ID is 666
+
+Creating Another Table
+
+
+1.      Create a table  name Address inside MyDB Database
+
+2.      -- inside Address table add column 
+
+        column Name         Datatype  
+  
+        - Cust_ZIP               - Stirng         didn't accept null value 
+
+        - Cust_Street            - String	      didn't accept null value
+
+        - Cust_City               - String         didn't accept null value
+
+        - Cust_State              - String
+
+        - Cust_ID                  - integer
+
+        - uniquely identifies each record in a table by Cust_ZIP
+
+        - The Customers table and Address table are connected by Cust_ID
+
+3.       Insert the following Data in to Address table
+
+
+1.      Write a query which display all Records from the table?
+
+
+2       Write a query which display all columns from the table where  there Citizenship is Ethiopian?
+
+
+3.      Write a query which display all columns from the table where  there Salary greater than 5million?
+
+
+4.       Write a query which display all Male Customers FirstName, LastName and Country?
+
+
+5.      Write a query which display only distinct Country?
+
+
+6       Write a query which display all Female Customers FirstName, LastName and Country in  descending?
+
+
+7.      Write a query that display all records from the table where Gender female, Here salary is greater than 2million and also Here Citizenship is Ethiopian?
+
+
+8.       Write a query that display all records from the table where there Citizenship is Ethiopian or uzbekistan?
+
+
+9.        Write a query that display Minimum Salary from the table?11.      Write a query that display Number of Customer We have in the table?
+10.      Write a query that display Maximum Fees from the table?
+
+
+
+12.       Write a query that display Average Salary from the record?
+
+
+13.       Write a query that display The sum of all customers Fees?
+
+
+14.      Write a query that display all the record where there salary is between 2million and 8million?
+
+
+15.      Write a query that display all the record where there firstName start with 'S'?
+
+
+16.       Write a query that display all the record where there firstName have 'e' in the second position and His/er lastName have end with 'e'?
+
+
+17.       Write a query that display all the record where there LastName that start with 'p' and ends with 'a'?
+
+
+18.      Write a query that display all the customers from Ethiopia, USA and France?
+
+
+To Be Continued…
+
+
