@@ -1,0 +1,7 @@
+Git command
+	- clon
+	- status
+	- add .
+	- commit
+	- pull
+	- push

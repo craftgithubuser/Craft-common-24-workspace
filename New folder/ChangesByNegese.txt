@@ -1,0 +1,8 @@
+def multiply(num1, num2):
+    return num1 * num2
+
+# Example usage:
+number1 = 5
+number2 = 10
+result = multiply(number1, number2)
+print("The result of", number1, "x", number2, "is:", result)

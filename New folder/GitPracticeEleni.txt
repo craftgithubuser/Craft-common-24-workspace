@@ -1,0 +1,5 @@
+Still practicinf the four states 
+	- Modify
+	- Staging
+	- Committ
+	- Push

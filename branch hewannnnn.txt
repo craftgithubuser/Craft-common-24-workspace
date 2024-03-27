@@ -1,0 +1,17 @@
+isting branches:
+----------------
+1,  git branch -- list branch
+
+creating branches:
+-----------------
+2,  git branch branchName - It will create a branch
+3,  git checkout -b branchName - It will create a branch and switch to it
+
+Switching between branches:
+--------------------------
+4,  git chechout branchName
+
+
+Deleting branch:
+---------------
+5,  git branch -d branchName

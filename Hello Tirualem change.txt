@@ -1,0 +1,226 @@
+Sela changes changes Tirualem;
+
+
+-------All MY SQL ASSIGNMENT IS HERE-----
+
+create table customers(
+Cust_Id int not null primary key,
+Cust_FirstName varchar(100) not null,
+Cust_LastName varchar(100) not null,
+Cust_NickName varchar(100),
+Cust_Age int,
+Cust_Gender Character not null,
+Cust_Country varchar(20) not null,
+Cust_Salary decimal not null
+);
+
+select * from customers;
+
+alter table customers
+add bonus int not null;
+
+select * from customers;
+
+alter table customers
+modify column Cust_Age int not null;
+
+alter table customers
+drop column Cust_NickName;
+
+rename table customers to CustomerTable;
+
+drop table customertable;
+
+drop database MyDB;
+
+
+
+create database MyDB;
+use MyDB;
+create table customers(
+Cust_Id int not null primary key,
+Cust_FirstName varchar(100) not null,
+Cust_LastName varchar(100) not null,
+Cust_NickName varchar(100),
+Cust_Age int,
+Cust_Gender Character not null,
+Cust_Country varchar(20) not null,
+Cust_Salary decimal not null
+);
+
+select * from customers;
+
+alter table customers
+add bonus int not null;
+
+select * from customers;
+
+alter table customers
+modify column Cust_Age int not null;
+
+alter table customers
+drop column Cust_NickName;
+
+insert into customers value('111','Nick','Jones',20,'M','USA','6300','1500');
+insert into customers value(222,'Amony','Martial',15,'M','France',9300,890);
+insert into customers value(333,'Ross','Geller',35,'M','Uzbekistan',31000,1250);
+insert into customers value(444,'Chandler','Bing',25,'M','Unkwn',8600,950);
+insert into customers value(555,'Rachel','Green',23,'F','Kazakhstan',7600,1400);
+insert into customers value(666,'Nick','Jones',28,'M','USA',7000,2000);
+insert into customers value(777,'Poul','Pogha',31,'M','France',8500,2100);
+insert into customers value(888,'Joey','Tribbiani',34,'M','Ethiopia',39000,1700);
+select * from customers;
+
+update customers
+SET Cust_Country = 'Ethiopia'
+WHERE Cust_Id = 333 and 444 and 555;
+select * from customers;
+
+delete from customers
+where Cust_Firstname = 'nick' and  Cust_Lastname = 'jones' and Cust_Id = 666;
+select * from customers;
+
+update customers
+SET Cust_Country = 'USA'
+WHERE Cust_Id = 111;
+update customers
+set cust_country = 'french'
+where cust_Id = 222;
+
+
+-- 1 Write a query which display all Records from the table? 
+
+select * from customers;
+
+-- 2 Write a query which display all columns from the table where  there Citizenship is Ethiopian?
+
+select * from customers
+where cust_country = 'Ethiopia';
+
+--  3 Write a query which display all columns from the table where  there Salary greater than 5million?
+
+select * from customers
+where cust_salary > 5000;
+
+-- 4 Write a query which display all Male Customers FirstName, LastName and Country?
+
+select cust_firstName, cust_lastName, cust_country from customers
+where cust_gender = 'M';
+
+-- 5  Write a query which display only distinct Country?
+
+select distinct cust_country from customers;
+
+-- 6 Write a query which display all Female Customers FirstName, LastName and Country in  descending?
+select cust_firstName, cust_lastName from customers
+where Cust_Gender = 'F'
+order by cust_country desc;
+
+-- 7 Write a query that display all records from the table where Gender female, Here salary is greater than 2million and also Here Citizenship is Ethiopian?
+
+select * from customers
+where cust_salary > '2000' and cust_gender = 'F' and cust_country ='Ethiopia';
+
+-- 8  Write a query that display all records from the table where there Citizenship is Ethiopian or uzbekistan?
+
+select * from customers
+where cust_country = 'Ethiopia' or 'uzbekistan';
+
+-- 9 Write a query that display Minimum Salary from the table?
+
+SELECT MIN(Cust_Salary)
+FROM customers; 
+
+-- 10. Write a query that display Maximum Fees from the table?
+
+SELECT max(Cust_Salary)
+FROM customers; 
+
+-- 11 Write a query that display Number of Customer We have in the table?
+
+select count(*) from customers;
+
+-- 12 Write a query that display Average Salary from the record?
+
+select avg(cust_salary) from customers;
+
+-- 13  Write a query that display The sum of all customers Fees?
+
+select SUM(Cust_Salary)
+FROM customers;
+
+-- 14 Write a query that display all the record where there salary is between 2million and 8million?
+
+select * from customers
+where cust_salary between 15000 and 35000;
+
+-- 15 Write a query that display all the record where there firstName start with 'S'?
+
+select * from customers
+where Cust_FirstName like 's%';
+
+-- 16 Write a query that display all the record where there firstName have 'e' in the second position and His/er lastName have end with 'e'?
+
+select * from customers
+where cust_lastName like '%e' and cust_firstName like '_e%';
+
+-- 17 Write a query that display all the record where there LastName that start with 'p' and ends with 'a'?
+
+select * from customers
+where cust_lastName like 'p%a';
+
+-- 18 Write a query that display all the customers from Ethiopia, USA and France?
+
+select * from customers 
+where cust_country IN ('Ethiopia', 'USA', 'france');
+
+-- Create a table name Address inside MyDB database
+
+create table Address(
+Cust_ZIP int not null,
+Cust_Street varchar(100) not null,
+Cust_City varchar(20) not null,
+Cust_State varchar(50),
+Cust_ID int
+);
+select * from Address;
+
+-- uniquely identifies each record in a table by Cust_ZIP
+alter table Address
+modify column Cust_ZIP int not null Primary key;
+
+-- Insert the following Data in to Address table
+
+insert into Address values(1000, 'Megenagna', 'Addis Ababa', 'Addis Ababa', '444');
+insert into Address values(2000, '4-kilo', 'Addis Ababa', 'Addis Ababa', '555');
+insert into Address values(3000, '41-Eyesus', 'Addis Ababa', 'Addis Ababa', '888');
+insert into Address values(4000, '6-kilo', 'Addis Ababa', 'Addis Ababa', '333');
+insert into Address (Cust_ZIP, Cust_Street, cust_City, Cust_State)  values(5000, '01-st', 'San-Diego', 'California');
+insert into Address (Cust_ZIP, Cust_Street, cust_City, Cust_State) values(6000, 'kU-road', 'Miami', 'Florida');
+insert into Address (Cust_ZIP, Cust_Street, cust_City, Cust_State) values(7000, 'Jk_road', 'miami', 'Florida');
+insert into Address (Cust_ZIP, Cust_Street, cust_City, Cust_State) values(8000, 'Lj-road', 'Atlanta', 'Georgia');
+select * from address;
+
+
+-- Write a query that perform INNER JOIN, LEFT OUTER JOIN, Right outer join and FULL OUTER JOIN.
+
+SELECT customers.Cust_Id, customers.Cust_Age, customers.Cust_LastName, address.Cust_City
+FROM customers INNER JOIN address
+ON customers.Cust_Id = address.Cust_ID;
+show tables;
+
+SELECT customers.Cust_Id, customers.Cust_Age, customers.Cust_LastName, address.Cust_City
+FROM customers left join address
+ON customers.Cust_Id = address.Cust_ID;
+show tables;
+
+SELECT customers.Cust_Id, customers.Cust_Age, customers.Cust_LastName, address.Cust_City
+FROM customers right join address
+ON customers.Cust_Id = address.Cust_ID;
+show tables;
+
+SELECT customers.Cust_Id, customers.Cust_Age, customers.Cust_LastName, address.Cust_City
+FROM customers JOIN address
+ON customers.Cust_Id = address.Cust_ZIP
+order by address.Cust_ZIP;
+show tables;

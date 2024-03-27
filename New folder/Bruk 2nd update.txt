@@ -1,0 +1,14 @@
+git config --global user.name "bsolo40"
+
+git config --global user.email "github account email address"
+
+
+git pull origin main
+(Make a change -- create a file with your name)
+git status
+git add .
+git commit -m "your commit message"
+git pull origin main
+git push origin main
+
+Esc then :q!
