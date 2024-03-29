@@ -58,30 +58,37 @@ and cust_ID = 666;
 /* recreate schema/db after drop and table after drop the table*/
 
 -- 6 write a Query
--- 1
+-- 1 Write a query which display all Records from the table
 select * from Customer;
--- 2
+
+/* 2 Write a query which display all columns from the table
+ where  there Citizenship is Ethiopian?*/
+
 select * 
 from customer
 where cust_Country = 'Ethiopian';
 
--- 3
+/* 3 Write a query which display all columns from the table where  
+there Salary greater than 5million?*/
+
 Select *
 from customer
 where cust_salary > 5000000;
 
--- 4
+-- 4 Write a query which display all Male Customers FirstName, LastName and Country?
 
 SELECT Cust_firstName, Cust_lastName, cust_country
 FROM customer
 where cust_Gender ='m';
 
--- 5
+-- 5  Write a query which display only distinct Country?
 
 SELECT DISTINCT  cust_Country 
 FROM customer;
 
--- Q6
+/* 6 Write a query which display all Female Customers FirstName, LastName 
+and Country in  descending?*/
+
 SELECT Cust_firstName, Cust_lastName, Cust_country
 FROM customer
 where cust_Gender ='F'
@@ -153,7 +160,8 @@ cust_zip varchar(50) primary key not null,
 cust_street varchar(100) not null,
 cust_city varchar(50) not null,
 cust_state varchar(100),
-cust_id int 
+cust_id int ,
+foreign key (cust_ID) references customer (cust_id)
 );
 
 -- DML ADDRES
@@ -166,8 +174,7 @@ insert into address values(1000, "megenagna", "addisabeba", "addisabeba", 444),
 (7000, "JK_road", "miami", "florida",null),
 (8000, "LJ_road", "atlanta", "georgia",null);
 
-/* Write a query that perform INNER JOIN, LEFT OUTER JOIN, Right outer join and FULL OUTER JOIN.*/
-
+-- Write a query that perform INNER JOIN, LEFT OUTER JOIN, Right outer join and FULL OUTER JOIN.*
 -- inner join
 SELECT * 
 FROM customer INNER JOIN Address 
