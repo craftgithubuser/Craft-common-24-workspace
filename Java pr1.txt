@@ -1,26 +1,26 @@
 
 
-CONFLUENCE
-is used to store our doc, word diaries, meeting discussions,
+//CONFLUENCE
+//is used to store our doc, word diaries, meeting discussions,
 
 
 
 
-Java
+//Java
 "Hello, World!"
 public class HelloWorld{
    public static void main(string[]args) {
-      System.out.printin("Hello, World!");}
+      System.out.println("Hello, World!");}
 
 "Good, Morning!"
 public class GoodMorning{
    public static void main(string[]args) {
-       system.out.printin("Good, Morning!');
+       system.out.println("Good, Morning!');
 	   
 "Life is Good!"
 public class LifeisGood{
-   public statc void main(String[]
-       System.out.printin("Life is Good!");
+   public static void main(String[]
+       System.out.println("Life is Good!");
 	   
 	   }
 	}
@@ -28,7 +28,7 @@ public class LifeisGood{
 	"My Life in Arctic"
 public class Mylifein Arctic{
    public static void main(string []
-      system.out.printin("My Life in Arctic");
+      system.out.println("My Life in Arctic");
 	  }
 }
 	 
