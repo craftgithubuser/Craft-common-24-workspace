@@ -1,0 +1,79 @@
+
+
+//CONFLUENCE
+//is used to store our doc, word diaries, meeting discussions,
+
+
+
+
+//Java
+"Hello, World!"
+public class HelloWorld{
+   public static void main(string[]args) {
+      System.out.println("Hello, World!");}
+
+"Good, Morning!"
+public class GoodMorning{
+   public static void main(string[]args) {
+       system.out.println("Good, Morning!');
+	   
+"Life is Good!"
+public class LifeisGood{
+   public static void main(String[]
+       System.out.println("Life is Good!");
+	   
+	   }
+	}
+	
+	"My Life in Arctic"
+public class Mylifein Arctic{
+   public static void main(string []
+      system.out.println("My Life in Arctic");
+	  }
+}
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
