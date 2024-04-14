@@ -1,0 +1,66 @@
+Project name: Bank Account
+
+
+
+Class------------------------>blue print what we want to create
+		= Static and Instance
+
+
+	String acctName / static
+	Int Balance / Instance
+	String bankName / static
+	String bankAddress / Static
+	Int routingNumber / Static
+	Int acctNumber /  static
+
+
+Method--------------behavior, functionality
+		= Local
+	Deposit 
+		depositfee
+	withdrawal
+		withdrawal, reaminbale
+	Transaction
+		transfee
+
+
+Object------------tangible outcome, result
+	Acct1 (Tsega, MD, BOA, 123456, 5668980,100000)
+	Acct2 (Salem, MD, BOA, 123456,56876590,150000)
+	Acct3 (Eyob, MD, BOA, 123456,67854890, 120000)
+	Acct4 (Tamene, MD, BOA, 123456,4568654, 120000)
+	  .
+          .
+	Acct12
+
+
+
+
+======================================================================================================================================================================
+
+Java programming
+ - variable- an alternative name for memory allocation - assigned area/ location
+	a=10.  a=10 int
+	b=10.03 f/d
+
+
+Two types of Data Types in Java
+ 	1. Primitive
+		- Boolean- T/f values hold data type. In Java F value is default. ( Unless explicitly declare it)
+		- byte - integer value -any whole number (0-9)---> 1byte storage. size ----- 128 to 127 = 124
+		- char - single character - which is 0-9, A-Z, any symbols &,;,.,? on keyboard size----- 2byte-----written in single quote
+		-short - integer. Size------- 2byte
+		-int -integer data type, wholenumber 0-9. Size----4byte
+		-long - integer whole number 0-9. size-----> 8byte
+		-float - decimal/fraction value 1.8 ----> single precision. after point it holds 6/7 digit. 3.3333333F/f
+
+		-double - decimal/fraction value 1.8------> double precision- after point it holds 14-16 digits. Ex. 3.34567876543456D/d
+	2. Non-primitive data type/reference
+	- any keywords used to create an object is called non-primitive datatype
+		Example: String, array, Class, Interface, any custom object etc...
+
+	-How to create object?  
+		-className followed by objectName = new followed by constructor();
+			-new - is a keyword. it helps us to create an Objerct
+			-constructor is alike a method used to initialize an object and constractor must have the same name with the className.
+		
