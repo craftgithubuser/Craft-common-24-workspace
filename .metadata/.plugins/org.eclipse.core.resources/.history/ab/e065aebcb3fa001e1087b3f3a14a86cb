@@ -1,0 +1,10 @@
+package com.ass1;
+
+public class Studentgrade {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

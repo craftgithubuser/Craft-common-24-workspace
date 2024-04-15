@@ -1,0 +1,27 @@
+package com.ass1;
+
+import java.util.Scanner;
+
+public class Studentgrade {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner Sc = new Scanner(System.in);
+		
+		System.out.println("Please enter your Name");
+		String Name = Sc.next();
+		
+		System.out.println("Please enter your grade on Subject_A");
+		int Suject_A = Sc.nextInt();
+		
+		System.out.println("Please enter your grade on Subject_B");
+		int Subject_B = Sc.nextInt();
+		
+		System.out.println("Please enter your grade on Subject_C");
+		int Subject_C = Sc.nextInt();
+		
+		
+	}
+
+}
