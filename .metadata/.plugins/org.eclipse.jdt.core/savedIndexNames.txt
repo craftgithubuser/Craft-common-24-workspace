@@ -1,0 +1,2 @@
+INDEX VERSION 1.134+C:\Users\fekad\OneDrive\Desktop\GIT Resources\Craft-common-24-workspace\Craft-common-24-workspace\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index

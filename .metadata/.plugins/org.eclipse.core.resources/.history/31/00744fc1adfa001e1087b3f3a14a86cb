@@ -1,0 +1,19 @@
+package com.ass1;
+
+
+public class Homew
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][]A = {{1,1,1},{2,2,2},{3,3,3},{4,4,4}};
+		int[][]B = {{5,5,5},{7,7,7},{8,8,8},{9,9,9}};
+
+
+		for (i=0; i<2;i++){
+			for (int y=0;y<5; y++{
+				c[x][y] = A[i][y] + B[i][y];
+		System.out.print(c[i][y] + " ");
+
+	}
+
+}
